@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student-Athletes' Rights. Being Recruited? Know Your Rights</title>
+<title>Student-Athletes' Rights — Being Recruited? Know Your Rights</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#152A22;
@@ -26,7 +26,7 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:'Source Serif 4', Georgia, serif;
+    font-family:'Barlow', 'Helvetica Neue', Arial, sans-serif;
     font-size:17px;
     line-height:1.65;
   }
@@ -35,6 +35,7 @@
     letter-spacing:0.01em;
   }
   a{color:var(--turf);}
+  .gloss-link{ text-decoration:underline dotted; text-underline-offset:3px; }
 
   .shell{
     display:grid;
@@ -55,7 +56,7 @@
     .side{ position:static; height:auto; border-right:none; border-bottom:1px solid var(--line); padding:18px 20px; }
   }
   .brand{ font-weight:800; font-size:19px; color:var(--turf); text-transform:uppercase; line-height:1.1; margin-bottom:4px; }
-  .brand-sub{ font-family:'Source Serif 4', serif; font-size:13px; color:var(--ink-soft); margin-bottom:22px; font-style:italic; }
+  .brand-sub{ font-family:'Barlow', sans-serif; font-size:13px; color:var(--ink-soft); margin-bottom:22px; font-style:italic; }
   .group-label{
     font-size:11px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase;
     color:var(--ink-soft); margin:18px 0 6px 8px;
@@ -92,34 +93,56 @@
   .tiles{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
   @media (max-width:520px){ .tiles{grid-template-columns:1fr;} }
   .tile{
-    display:block; text-decoration:none; background:var(--paper-raised);
+    display:flex; align-items:flex-start; gap:12px; text-decoration:none; background:var(--paper-raised);
     border:1px solid var(--line); border-radius:8px; padding:14px 16px;
     transition:border-color .15s, transform .15s;
   }
   .tile:hover{ border-color:var(--turf); transform:translateY(-1px); }
+  .tile .t-icon{ flex:none; width:30px; height:30px; margin-top:1px; }
+  .tile .t-icon svg{ width:100%; height:100%; }
   .tile .t-n{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:12px; color:var(--turf); }
   .tile .t-title{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:18px; color:var(--ink); margin-top:2px; }
+  .hero-art{ max-width:var(--max); margin:8px 0 0; }
+  .hero-art svg{ width:100%; height:auto; display:block; }
 
   section.card{ max-width:var(--max); padding:46px 0; border-top:1px solid var(--line); }
-  .num-label{ font-size:14px; font-weight:700; color:var(--turf); margin-bottom:6px; }
-  section.card h2{ font-size:29px; font-weight:700; margin:0 0 16px; color:var(--ink); line-height:1.1; }
+  .num-label{ font-size:15px; font-weight:700; color:var(--turf); margin-bottom:6px; letter-spacing:0.03em; }
+  section.card h2{ font-size:31px; font-weight:700; margin:0 0 16px; color:var(--ink); line-height:1.1; }
   section.card h3{ font-size:18px; font-weight:700; margin:26px 0 8px; color:var(--turf); }
   section.card p{margin:0 0 16px;color:var(--ink);}
   section.card ul{margin:0 0 16px;padding-left:20px;}
   section.card li{margin-bottom:10px;}
   section.card li::marker{color:var(--turf);}
+  .accent{ color:var(--turf); font-weight:700; }
 
-  .quote{ font-style:italic; color:var(--turf); border-left:3px solid var(--turf); padding:2px 0 2px 16px; margin:0 0 20px; font-size:18px; }
+  .quote{ font-style:italic; color:var(--turf); border-left:3px solid var(--turf); padding:2px 0 2px 16px; margin:0 0 12px; font-size:18px; }
+  .quote-why{ margin:0 0 20px; padding-left:19px; }
+  .quote-why p{ margin:0 0 6px; font-size:15px; color:var(--ink-soft); }
 
-  .ask-box{ background:var(--turf-light); border-radius:6px; padding:16px 20px; margin:18px 0; }
-  .ask-box .label{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.07em; text-transform:uppercase; color:var(--turf); display:block; margin-bottom:6px; }
-  .ask-box p{margin:0;color:var(--ink);}
+  .ask-box{
+    background:var(--turf-light); border-radius:8px; padding:18px 22px; margin:20px 0;
+    border-left:5px solid var(--turf); box-shadow:0 1px 3px rgba(21,42,34,0.08);
+  }
+  .ask-box .label{
+    font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--turf); display:flex; align-items:center; gap:8px; margin-bottom:8px;
+  }
+  .ask-box .label::before{
+    content:"?"; display:inline-flex; align-items:center; justify-content:center;
+    width:18px; height:18px; border-radius:50%; background:var(--turf); color:#fff; font-size:12px; font-weight:800;
+  }
+  .ask-box p{margin:0;color:var(--ink); font-size:17px;}
+  .ask-box .lead-in{ font-style:italic; color:var(--ink-soft); font-size:14px; margin:0 0 6px; }
+
+  .callout{ background:var(--paper-raised); border:1px solid var(--line); border-left:5px solid var(--ink-soft); border-radius:8px; padding:16px 20px; margin:16px 0; }
+  .callout .label{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:6px; }
+  .callout p{margin:0;}
 
   .flag-box{ background:var(--flag-light); border-radius:6px; padding:16px 20px; margin:18px 0; }
   .flag-box .label{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.07em; text-transform:uppercase; color:var(--flag); display:block; margin-bottom:6px; }
   .flag-box p{margin:0;color:var(--ink);}
 
-  .glossary details{ border-bottom:1px solid var(--line); padding:14px 2px; }
+  .glossary details{ border-bottom:1px solid var(--line); padding:14px 2px; scroll-margin-top:24px; }
   .glossary details:first-of-type{border-top:1px solid var(--line);}
   .glossary summary{
     cursor:pointer; font-size:17px; font-weight:700; color:var(--ink);
@@ -128,10 +151,11 @@
   .glossary summary::-webkit-details-marker{display:none;}
   .glossary summary::after{ content:"+"; color:var(--turf); font-size:20px; font-weight:700; flex:none; }
   .glossary details[open] summary::after{content:"–";}
-  .glossary p{ font-family:'Source Serif 4',serif; margin:10px 0 0; color:var(--ink-soft); font-size:16px; }
+  .glossary p{ font-family:'Barlow',sans-serif; margin:10px 0 0; color:var(--ink-soft); font-size:16px; }
+  .glossary details[open]{ background:var(--turf-light); border-radius:6px; margin:0 -10px; padding:14px 12px; }
 
   .subcards{ display:grid; grid-template-columns:1fr; gap:14px; margin:20px 0; }
-  .subcard{ background:var(--paper-raised); border:1px solid var(--line); border-radius:8px; padding:16px 20px; }
+  .subcard{ background:var(--paper-raised); border:1px solid var(--line); border-radius:8px; padding:16px 20px; scroll-margin-top:24px; }
   .subcard h3{ margin:0 0 8px; font-size:17px; }
   .subcard p, .subcard ul{margin:0; font-size:16px;}
   .subcard ul{padding-left:18px; margin-top:8px;}
@@ -183,23 +207,58 @@
   <main>
     <div class="hero">
       <h1>Being recruited?<br><span class="underline">Know your rights.</span></h1>
-      <p class="lede">Recruiting isn't happening to you; it's happening with you. Here's what you and your family are actually entitled to, in plain language, before you commit, sign, or say yes to anything.</p>
+      <p class="lede">Recruiting isn't happening to you — it's happening with you. Here's what you and your family are <strong>actually entitled to</strong>, in plain language. <em>Read this before you commit, sign, or say yes to anything.</em></p>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 700 90" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="45" x2="700" y2="45" stroke="#DAE1D9" stroke-width="1"/>
+          <circle cx="24" cy="45" r="5" fill="#1F4D3A"/>
+          <path d="M24 45 C 140 10, 220 80, 340 45" stroke="#1F4D3A" stroke-width="1.6" fill="none" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <circle cx="340" cy="45" r="5" fill="none" stroke="#1F4D3A" stroke-width="1.6"/>
+          <path d="M340 45 C 440 15, 520 75, 640 45" stroke="#1F4D3A" stroke-width="1.6" fill="none" stroke-dasharray="2 7" stroke-linecap="round"/>
+          <path d="M632 40 L 646 45 L 632 50" stroke="#1F4D3A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
 
     <div class="hub">
       <div class="group-label">8 things every recruit should know</div>
       <div class="tiles">
-        <a class="tile" href="#recruiting-rules"><div class="t-n">01</div><div class="t-title">Recruiting Rules</div></a>
-        <a class="tile" href="#nil"><div class="t-n">02</div><div class="t-title">NIL Compensation</div></a>
-        <a class="tile" href="#agents"><div class="t-n">03</div><div class="t-title">Agents / Representation</div></a>
-        <a class="tile" href="#eligibility"><div class="t-n">04</div><div class="t-title">Eligibility &amp; Transfer</div></a>
-        <a class="tile" href="#roster"><div class="t-n">05</div><div class="t-title">Roster &amp; Scholarship</div></a>
-        <a class="tile" href="#privacy"><div class="t-n">06</div><div class="t-title">Privacy</div></a>
-        <a class="tile" href="#international"><div class="t-n">07</div><div class="t-title">International Athletes</div></a>
-        <a class="tile" href="#contracts"><div class="t-n">08</div><div class="t-title">Contracts</div></a>
+        <a class="tile" href="#recruiting-rules">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="14" r="6"/><path d="M14.5 11 20 6"/><path d="M20 6h-4V4"/><path d="M9 12.5v3M7.5 14h3"/></svg></div>
+          <div><div class="t-n">01</div><div class="t-title">Recruiting Rules</div></div>
+        </a>
+        <a class="tile" href="#nil">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1.4-1.3-2.5-3-2.5s-3 1-3 2.2c0 3 6 1.4 6 4.3 0 1.3-1.3 2.5-3 2.5s-3-1.1-3-2.5"/></svg></div>
+          <div><div class="t-n">02</div><div class="t-title">NIL Compensation</div></div>
+        </a>
+        <a class="tile" href="#agents">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l5-4 3 2 2-2 3 3 5-4"/><path d="M7 8l-4 4 3 3"/><path d="M17 7l4 4-4 5"/><path d="M10 10l3 3-2 2"/></svg></div>
+          <div><div class="t-n">03</div><div class="t-title">Agents / Representation</div></div>
+        </a>
+        <a class="tile" href="#eligibility">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13M17 7l-3-3M17 7l-3 3"/><path d="M20 17H7M7 17l3-3M7 17l3 3"/></svg></div>
+          <div><div class="t-n">04</div><div class="t-title">Eligibility &amp; Transfer</div></div>
+        </a>
+        <a class="tile" href="#roster">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l1 4H7l1-4z"/><path d="M7 7l-2 3v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10l-2-3"/><path d="M10 12h4M10 15h4"/></svg></div>
+          <div><div class="t-n">05</div><div class="t-title">Roster &amp; Scholarship</div></div>
+        </a>
+        <a class="tile" href="#privacy">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="15" r="1.4"/></svg></div>
+          <div><div class="t-n">06</div><div class="t-title">Privacy</div></div>
+        </a>
+        <a class="tile" href="#international">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.8 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.8-4-9s1.5-6.5 4-9z"/></svg></div>
+          <div><div class="t-n">07</div><div class="t-title">International Athletes</div></div>
+        </a>
+        <a class="tile" href="#contracts">
+          <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F4D3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4"/><path d="M8 12h8M8 15h8M8 18h5"/></svg></div>
+          <div><div class="t-n">08</div><div class="t-title">Contracts</div></div>
+        </a>
       </div>
     </div>
 
+    <!-- 01 RECRUITING RULES -->
     <section class="card" id="recruiting-rules">
       <div class="num-label">01 · Know Your Rights</div>
       <h2>Recruiting Rules</h2>
@@ -207,92 +266,130 @@
       <h3>When can a coach contact you?</h3>
       <ul>
         <li><strong>D1 &amp; D2:</strong> coaches generally can't call, text, DM, or approach you in person until <strong>June 15 after your sophomore year</strong>. Exact windows vary by sport.</li>
-        <li><strong>D3:</strong> contact is allowed year-round. No dead period.</li>
-        <li><strong>Dead periods</strong> exist where no in-person recruiting contact is allowed at all, even on campus.</li>
+        <li><strong>D3:</strong> contact is allowed year-round — no quiet period.</li>
+        <li><strong>Dead periods</strong> exist where no in-person recruiting contact is allowed at all, even on campus. During this time, even a text or a wave in the hallway from a coach isn't allowed.</li>
       </ul>
       <div class="quote">"Are you allowed to be contacting me right now?"</div>
-      <p>A legitimate coach will answer that without hesitation.</p>
+      <div class="quote-why">
+        <p><strong>Why ask it:</strong></p>
+        <p>1. It tells you whether the coach is actually following NCAA rules.</p>
+        <p>2. It protects your own eligibility — engaging with contact that isn't allowed yet can cause problems later.</p>
+        <p>3. It signals what kind of program this is. A legitimate coach answers without hesitation.</p>
+      </div>
 
-      <h3>Can you contact a coach first?</h3>
-      <p>Yes! The restrictions above are on <em>coach-initiated</em> contact. You can email a coach, fill out a recruiting questionnaire, attend a camp, or reach out any time, at any age. Coaches are also limited in how they can respond before your contact period opens, so don't be surprised by a generic or delayed reply early on — that's the rule working correctly, not a lack of interest.</p>
+      <h3>Can I contact a coach first?</h3>
+      <ul>
+        <li>Yes! The restrictions above are on <em>coach-initiated</em> contact. You can email a coach, fill out a recruiting questionnaire, attend a camp, or reach out any time, at any age.</li>
+        <li>Coaches are also limited in how they can respond before your contact period opens — don't be surprised by a generic or delayed reply early on. That's the rule working correctly, not necessarily a lack of interest.</li>
+      </ul>
 
-      <h3>What is an official visit?</h3>
+      <h3>What should I know about official visits?</h3>
+      <p>An official visit is a paid campus visit hosted by the school — here's what that means in practice.</p>
       <ul>
         <li>Generally <strong>one official visit per school</strong> (unless there's a coaching change), though you can take as many <em>unofficial</em> visits as you want.</li>
-        <li>On an official visit, the school can pay for your transportation, up to a two-night stay, meals, and reasonable entertainment for you and up to two family members.</li>
+        <li>On an official visit, the school can pay for your <span class="accent">transportation</span>, up to a <span class="accent">two-night stay</span>, <span class="accent">meals</span>, and <span class="accent">reasonable entertainment</span> for you and up to <span class="accent">two family members</span>.</li>
         <li>On an unofficial visit, you cover your own costs — a school can't quietly cover extra expenses.</li>
       </ul>
-      <div class="ask-box"><span class="label">Ask this</span><p>What exactly is covered on this visit — in writing, before I show up?</p></div>
+      <div class="ask-box">
+        <p class="lead-in">Before you confirm the visit:</p>
+        <span class="label">Ask the coach</span>
+        <p>May I get, in writing, exactly what expenses will be covered?</p>
+      </div>
     </section>
 
+    <!-- 02 NIL -->
     <section class="card" id="nil">
       <div class="num-label">02 · Know Your Rights</div>
       <h2>NIL Compensation</h2>
 
       <h3>What's NIL?</h3>
-      <p><strong>Name, Image, and Likeness (NIL)</strong> is your right to get paid by a third party (a brand, a local business, a collective, etc) for endorsements, appearances, and your personal brand. It's separate from any scholarship.</p>
+      <p><strong>Name, Image, and Likeness (NIL)</strong> is your right to get paid by a third party — such as a brand, a local business, or a collective — for endorsements, appearances, and your personal brand. It's separate from any scholarship.</p>
+
+      <h3>What are the pay-for-play rules?</h3>
+      <ul>
+        <li>Schools and collectives <strong>can't</strong> pay you simply to enroll or stay.</li>
+        <li>Every NIL deal <strong>must</strong> reflect a genuine business purpose and fair market value — exactly what the CSC and <a href="#term-nilgo" class="gloss-link">NIL Go</a> are built to check (see below). A deal with no real deliverable attached is the classic sign of disguised pay-for-play.</li>
+      </ul>
 
       <h3>How is NIL different from revenue sharing?</h3>
       <ul>
-        <li><strong>NIL</strong> is money from <em>outside</em> parties, paid for real promotional value.</li>
-        <li><strong>Revenue sharing</strong> is money the <em>school itself</em> pays you directly, capped at $20.5 million per school this year, authorized under the 2025 House settlement.</li>
-        <li>They're tracked, reported, and reviewed separately. A coach mixing the two into one vague "package" number is worth pushing back on. Ask which part is which.</li>
+        <li><strong>NIL</strong> is money from <em>outside</em> parties, paid for <span class="accent">real</span> promotional value — meaning fair market value for an actual service, not just because you're talented.</li>
+        <li><strong>Revenue sharing</strong> is money the <em>school itself</em> pays you directly, capped at $20.5 million per school currently, authorized under the 2025 <em>House v. NCAA</em> settlement, and reported through <a href="#term-caps" class="gloss-link">CAPS</a> (College Athlete Payment System).</li>
+        <li>NIL and revenue-sharing money are tracked, reported, and reviewed separately. A coach mixing the two into one vague "package" number is worth pushing back on — ask which part is which.</li>
       </ul>
 
       <h3>What's an extra benefit vs. an NIL deal?</h3>
       <ul>
-        <li>A legitimate <strong>NIL deal</strong> pays you for real value, such as an endorsement, an appearance, or your name on a product, at fair market value.</li>
-        <li>An <strong>extra benefit</strong> is anything of value given to you or your family because of your athletic status, with no real service behind it — cash, cars, free stuff, favors. This is a violation, both for you and for the school.</li>
+        <li>A legitimate <strong>NIL deal</strong> pays you for real value — an endorsement, an appearance, your name on a product — at fair market value.</li>
+        <li>An <strong>extra benefit</strong> is anything of value given to you or your family because of your athletic status, with no real service behind it. Think: cash, cars, free stuff, favors. This "benefit" is a violation, both for you and for the school.</li>
       </ul>
-
-      <h3>What are the pay-for-play rules?</h3>
-      <p>Schools and collectives CAN'T pay you simply to enroll or stay. Every NIL deal is supposed to reflect a genuine business purpose and fair market value, which is exactly what the CSC and NILGo are built to check (see below). A deal with no real deliverable attached is the classic sign of disguised pay-for-play.</p>
 
       <h3>What are the CSC and NIL Go?</h3>
       <ul>
-        <li>The <strong>College Sports Commission (CSC)</strong> is the body created after the House settlement to enforce NIL and revenue-sharing rules.</li>
-        <li><strong>NILGo</strong> is its clearinghouse. Any deal worth $2,500 or more must be submitted for review against fair-market-value benchmarks.</li>
-        <li>As a high schooler, you'll need to disclose any NIL deal over $2,500 starting <strong> on your first day of junior year. </strong> You get a two-week window after enrollment to report it.</li>
+        <li>The <strong id="term-csc">College Sports Commission (CSC)</strong> is the body created after the <em>House v. NCAA</em> settlement to enforce NIL and revenue-sharing rules.</li>
+        <li><strong id="term-nilgo-inline">NIL Go</strong> is the CSC's clearinghouse — any deal worth <strong>$600 or more</strong> must be submitted for review against fair-market-value benchmarks.</li>
+        <li>As a high schooler, you'll need to disclose any NIL deal over $600 starting on your <strong>first day of junior year</strong>. You get a two-week window after enrollment to report it.</li>
       </ul>
 
-      <h3>When can you enter into an NIL contract?</h3>
-      <p>As a high schooler, this depends entirely on <strong>your state's laws</strong> and your <strong>state high school athletic association's rules</strong>, as some states allow it well before college, others don't, and a deal that's fine for NCAA purposes can still cost you your <em>high school</em> eligibility if your state association doesn't allow it.</p>
-      <div class="ask-box"><span class="label">Ask this</span><p>Does this NIL offer put my current high school eligibility at risk?</p></div>
+      <h3>When can I enter into an NIL contract?</h3>
+      <p>As a high schooler, you have to consult <strong>your state's laws</strong> and your <a href="#rules-laws" class="gloss-link">state high school athletic association's rules</a>:</p>
+      <ul>
+        <li>Some states allow NIL deals well before college; others don't.</li>
+        <li>A deal that's fine for NCAA purposes can still cost you your <span class="accent">high school eligibility</span> if your state association doesn't allow it.</li>
+      </ul>
+      <div class="ask-box">
+        <span class="label">Ask this</span>
+        <p>Does this NIL offer put my current high school eligibility at risk?</p>
+      </div>
     </section>
 
+    <!-- 03 AGENTS -->
     <section class="card" id="agents">
       <div class="num-label">03 · Know Your Rights</div>
       <h2>Agents / Representation</h2>
       <ul>
-        <li>You generally <strong>can</strong>, in many states, hire an agent or attorney specifically to <strong>review NIL deals</strong>, which is a narrower, different role.</li>
-        <li>A <strong>" street agent "</strong> is an unlicensed middleman. They are often loosely tied to a shoe brand, program, or collective that brokers access to recruits, sometimes for a cut of future earnings. The NCAA doesn't recognize them, and dealing with one can create real problems later.They are in it for themselves,not YOU.</li>
+        <li>You generally <strong>cannot</strong> have an agent market you to colleges or negotiate your enrollment — that can jeopardize NCAA eligibility.</li>
+        <li>You generally <strong>can</strong>, in many states, hire an agent or attorney specifically to <strong>review NIL deals</strong>, which is a narrower, different role than marketing you to colleges.</li>
       </ul>
-      <div class="ask-box"><span class="label">Ask this</span><p>Are you a licensed agent in my state, and what exactly are you being paid to do for me?</p></div>
+      <div class="callout">
+        <span class="label">Street agents work for themselves — not you</span>
+        <p>A <strong id="term-streetagent-inline">"street agent"</strong> is an unlicensed go-between, often loosely tied to a shoe brand, program, or collective, who brokers access to recruits — sometimes for a cut of future earnings. The NCAA doesn't recognize them, and dealing with one can create real problems for you later.</p>
+      </div>
+      <div class="ask-box">
+        <span class="label">Ask the agent</span>
+        <p>Are you a licensed agent in my state, and what exactly are you being paid to do for me?</p>
+        <p style="margin-top:10px;">What am I obligated to do for you, and for how long?</p>
+      </div>
     </section>
 
+    <!-- 04 ELIGIBILITY & TRANSFER -->
     <section class="card" id="eligibility">
       <div class="num-label">04 · Know Your Rights</div>
       <h2>Eligibility &amp; Transfer</h2>
 
       <h3>What is the new "5-in-5" eligibility model?</h3>
-      <p>Approved by the NCAA in June 2026, it replaces the old "4 seasons in 5 years" rule with an age-based model: <strong>5 seasons of competition within a 5-year window</strong>, starting either at full-time college enrollment or the academic year after your <strong>19th birthday</strong>, whichever comes first. Extension waivers are being eliminated except for pregnancy, official religious missions, and active-duty military service. It isn't retroactive for athletes who'd already used up eligibility, and it fully applies to athletes enrolling in 2027–28; current athletes and 2026 incoming freshmen can choose between the old and new model.</p>
-
-      <h3>When can you enter the transfer portal, and when can coaches contact you?</h3>
+      <p>Approved by the NCAA in June 2026, it replaces the old "4 seasons in 5 years" rule with an age-based model: <strong>5 seasons of competition within a 5-year window</strong>, starting either at full-time college enrollment or the academic year after your <strong>19th birthday</strong>, whichever comes first. Extension waivers are being eliminated except for pregnancy, official religious missions, and active-duty military service.</p>
       <ul>
-        <li>This isn't a high-school mechanism, but it shapes how many real roster spots exist by the time you'd enroll. Coaches fill one capped roster from both the high school class and the portal class.</li>
-        <li><strong>Football:</strong> a single 15-day window, Jan 2–16 (with a short extension for College Football Playoff teams).</li>
-        <li><strong>Basketball:</strong> a 15-day window opening at Midnight after the NCAA Tournament National Championship game.</li>
-        <li>If a school's head coach leaves, its current players get their own window to enter the portal, which typically opens a few days after a new coach is hired.</li>
-        <li>Other schools generally can't contact a player before that player has actually entered the portal. Early contact is tampering, the same idea as the recruiting contact-period rules above.</li>
+        <li>The 5-in-5 model isn't retroactive for athletes who have already used up eligibility.</li>
+        <li>It fully applies to athletes enrolling in 2027–28; current athletes and 2026 incoming freshmen can choose between the old and new model.</li>
       </ul>
 
-      <h3>What happens if the coach who recruited you leaves or gets fired?</h3>
+      <h3>When can I enter the transfer portal, and when can coaches contact me?</h3>
+      <ul>
+        <li>The transfer portal isn't a high-school mechanism, but it shapes how many real roster spots exist by the time you'd enroll — coaches fill one capped roster from both the high school class and the portal class.</li>
+        <li><strong id="term-transferportal-inline">Football:</strong> a single 15-day window, Jan 2–16 (with a short extension for College Football Playoff teams).</li>
+        <li><strong>Basketball:</strong> a 15-day window opening at <span class="accent">midnight</span> after the NCAA Tournament National Championship game.</li>
+        <li>If a school's head coach leaves, its current players get their own window to enter the portal — typically opening a few days after a new coach is hired.</li>
+        <li>Other schools generally can't contact a player before that player has actually entered the portal. Early contact is <span class="accent">tampering</span> — the same idea as the recruiting contact-period rules above.</li>
+      </ul>
+
+      <h3>What happens if the coach who recruited me leaves or gets fired?</h3>
       <p>Your National Letter of Intent is with the <strong>institution</strong>, not the coach. Losing your coach doesn't automatically release you from a signed agreement, though you can ask the school directly for a release, and most programs grant them.</p>
 
-      <h3>What could ruin your eligibility?</h3>
+      <h3>What could ruin my eligibility?</h3>
       <ul>
         <li>Giving false information to the NCAA Eligibility Center</li>
-        <li>Accepting extra benefits (see NIL Compensation above)</li>
+        <li>Accepting extra benefits (see <a href="#nil" class="gloss-link">NIL Compensation</a> above)</li>
         <li>Working with an agent outside the narrow allowed role</li>
         <li>Signing a professional contract or competing for prize money in your sport</li>
         <li>Falling short of academic eligibility requirements (core courses, GPA)</li>
@@ -300,74 +397,89 @@
       </ul>
     </section>
 
+    <!-- 05 ROSTER & SCHOLARSHIP -->
     <section class="card" id="roster">
       <div class="num-label">05 · Know Your Rights</div>
       <h2>Roster &amp; Scholarship</h2>
 
-      <h3>Can you be cut?</h3>
-      <p>Yes. With new NCAA roster caps in effect at many D1 programs, walk-ons and depth players are more exposed than in past years. An offer isn't the same as a guaranteed spot for four years.</p>
+      <h3>Can I be cut?</h3>
+      <ul>
+        <li>Yes — with new NCAA roster caps in effect at many D1 programs, walk-ons and depth players are more exposed than in past years.</li>
+        <li>An offer isn't the same as a guaranteed spot for four years.</li>
+      </ul>
 
-      <h3>What happens if you're injured?</h3>
-      <p>NCAA rules prohibit a school from reducing or canceling your athletic aid <em>because</em> of an injury, illness, or how much you play. That protection is real, but it's worth confirming directly, and worth knowing it doesn't prevent non-renewal for other reasons at the end of a year-to-year scholarship.</p>
+      <h3>What happens if I'm injured?</h3>
+      <ul>
+        <li>NCAA rules prohibit a school from reducing or canceling your athletic aid <em>because</em> of an injury, illness, or how much you play.</li>
+        <li>That protection is real, but confirm it directly — it doesn't prevent non-renewal for other reasons at the end of a year-to-year scholarship.</li>
+      </ul>
 
       <h3>Scholarship terms worth asking about</h3>
       <ul>
         <li>Multi-year scholarship, or does it renew year to year?</li>
         <li>What are the specific reasons it could be reduced or not renewed?</li>
-        <li>Given roster caps, is your roster spot itself guaranteed?</li>
+        <li>Given roster caps, is my roster spot itself guaranteed?</li>
       </ul>
     </section>
 
+    <!-- 06 PRIVACY -->
     <section class="card" id="privacy">
       <div class="num-label">06 · Know Your Rights</div>
       <h2>Privacy</h2>
 
       <h3>Your right to see academic records</h3>
-      <p>Under federal law (FERPA), you and your family have the right to inspect and review your own education records, and to request correction of anything inaccurate. Once you turn 18 or enroll in college, those rights transfer from your parents to you directly.</p>
+      <p>Under federal law — the <strong id="term-ferpa-inline">Family Educational Rights and Privacy Act (FERPA)</strong> — you and your family have rights over your own education records:</p>
+      <ul>
+        <li>The right to inspect and review them, and to request correction of anything inaccurate.</li>
+        <li>Once you turn 18 or enroll in college, those rights transfer from your parents to you directly.</li>
+      </ul>
 
       <h3>Your right to see medical records</h3>
-      <p>Injury and medical records kept by a school's athletic department are also generally treated as part of your education records, meaning you have a right to access them, not just the training staff or coaches. Ask directly how to request a copy of your own file, especially before transferring or signing anything tied to injury history.</p>
+      <p>Injury and medical records kept by a school's athletic department are also generally treated as part of your education records — meaning you have a right to access them as well, not only the training staff or coaches. Ask directly how to request a copy of your own file, especially before transferring or signing anything tied to injury history.</p>
     </section>
 
+    <!-- 07 INTERNATIONAL -->
     <section class="card" id="international">
       <div class="num-label">07 · Know Your Rights</div>
       <h2>International Athletes</h2>
-      <p>Rules if you're not a U.S. citizen, including if you're currently living outside the United States:</p>
+      <p>Rules if you're not a U.S. citizen, or are currently living outside the United States — different rules apply:</p>
       <ul>
-        <li>Most international student-athletes compete on an <strong>F-1 visa</strong>, which tightly restricts outside income, which includes most NIL activity. This is a real gray zone right now: federal immigration rules haven't caught up with NCAA NIL rules.</li>
-        <li>Violating visa work restrictions is a far bigger risk than an eligibility issue, as it can mean visa termination or deportation, not just losing a season.</li>
-        <li>You'll register with the <strong>NCAA Eligibility Center</strong> for academic and amateurism certification, same as any recruit, but should also talk to an immigration-savvy advisor before signing any NIL deal.</li>
-        <li>Recent visa rule changes shortened grace periods and added restrictions on changing schools or programs. Ask specifically how this affects a future transfer, not just your initial enrollment.</li>
+        <li>Most international student-athletes compete on an <strong>F-1 visa</strong>, which tightly restricts outside income, including most NIL activity. This is a real gray zone right now with the F-1 visa: federal immigration rules haven't caught up with NCAA NIL rules.</li>
+        <li>The risks associated with violating F-1 work restrictions affect far more than eligibility — it can mean visa termination or deportation, not just losing a season.</li>
+        <li>You'll register with the <strong id="term-eligcenter-inline">NCAA Eligibility Center</strong> for academic and amateurism certification, same as any recruit, but should also talk to an immigration-savvy advisor before signing any NIL deal.</li>
+        <li>Recent visa rule changes shortened grace periods and added restrictions on changing schools or programs — ask specifically how this affects a <span class="accent">future transfer</span>, not just your initial enrollment.</li>
       </ul>
     </section>
 
+    <!-- 08 CONTRACTS -->
     <section class="card" id="contracts">
       <div class="num-label">08 · Know Your Rights</div>
       <h2>Contracts</h2>
 
       <h3>What is a contract?</h3>
-      <p>This is the most misunderstood part of recruiting: a contract is a promise that's legally enforceable. Plenty of what you'll hear during recruiting isn't that.</p>
+      <p>This is the most misunderstood part of recruiting: a contract is a promise that's legally enforceable. Plenty of what you'll hear during recruiting isn't that. A contract has to be both <strong>written down and signed</strong> to be binding — a written offer you haven't signed yet isn't final.</p>
 
       <h3>Written vs. verbal commitments</h3>
       <ul>
-        <li>A <strong>verbal commitment</strong> is not a contract. It's a statement of intent from either side, and it can change.</li>
-        <li>A <strong>written</strong> offer, or a signed agreement, is what actually holds up. If it isn't in writing, treat it as provisional.</li>
+        <li>A <strong>verbal commitment</strong> is not a contract — it's a statement of intent, from either side, and it can change.</li>
+        <li>A written offer is a good sign, but it's the <strong>signed agreement</strong> — the NLI or financial aid agreement — that actually holds up. If it isn't both written <em>and</em> signed, treat it as provisional.</li>
       </ul>
 
       <h3>When are the NLI and financial aid offer binding?</h3>
-      <p>The <strong>National Letter of Intent (NLI)</strong> and the school's <strong>financial aid agreement</strong> are the actual binding steps. Read every line before signing either. Once signed, walking away has real consequences (for the Letter of Intent specifically, potentially sitting out a year if you transfer).</p>
+      <p>The <strong id="term-nli-inline">National Letter of Intent (NLI)</strong> — a binding agreement between you and a school — and the school's <strong>financial aid agreement</strong> are the actual binding steps. Read every line before signing either, and make sure you understand what you're agreeing to. Once you've signed them, walking away has real consequences (for the Letter of Intent, you could be sitting out a year if you transfer).</p>
 
       <h3>What is actually being offered?</h3>
-      <p>"Offer" gets used loosely. Know which one you are actually being given:</p>
+      <p>"Offer" gets used loosely. Know which offer you are actually being given:</p>
       <ul>
         <li>Full or partial athletic scholarship</li>
         <li>Preferred walk-on (no scholarship, but a reserved roster spot)</li>
         <li>NIL deal or revenue-share agreement (compensation, not admission or a roster guarantee by itself)</li>
-        <li>At schools without athletic scholarships (EX: Ivy League): a coach's <strong>"support"</strong> means being placed on their list for admissions or a <strong>likely letter</strong>. Neither is a scholarship, and neither is a final admission decision.</li>
+        <li>At schools without athletic scholarships (such as those in the Ivy League): a coach's <strong>"support"</strong> — being placed on the list for admission — or a <strong>likely letter</strong>.</li>
       </ul>
+      <p>Neither support nor a likely letter is a scholarship, and neither is a final admission decision.</p>
 
       <h3>Collective contract termination clauses</h3>
-      <p>NIL collective deals often include conditions that end the contract early. Ensure you read for these two in particular:</p>
+      <p>NIL collective deals often include conditions that end the contract early. Read for these two in particular:</p>
       <ul>
         <li><strong>Roster status:</strong> some deals terminate automatically if you're cut, quit, or lose your roster spot.</li>
         <li><strong>Enrollment:</strong> some deals are contingent on you actually enrolling and staying enrolled at that specific school, and transferring likely ends the deal, sometimes with money owed back.</li>
@@ -377,70 +489,75 @@
       <ul>
         <li>Read the termination clauses first, not last.</li>
         <li>Check for exclusivity terms that limit your other deals or sponsors.</li>
-        <li>Get a parent, guardian, or advisor to review it BEFORE you sign, not after</li>
-        <li>Never sign the same day you receive it. A legitimate offer survives you taking a night to read it.</li>
+        <li>Get a parent, guardian, or advisor to review it <strong>before</strong> you sign, not after.</li>
+        <li>Never sign the same day you receive it. A legitimate offer will still be there if you take a night to read it.</li>
       </ul>
 
       <h3>Changing your mind</h3>
-      <p>You can decommit from a verbal commitment. It may be socially uncomfortable, and some coaches will push back, but it isn't against NCAA rules and doesn't carry the consequences of backing out of something you've actually signed.</p>
+      <p>You can decommit from a verbal commitment. It may be socially uncomfortable, and some coaches will push back, but it isn't against NCAA rules and doesn't carry the consequences of backing out of something you've actually signed. Once you've signed, that's a different story — walking away carries real consequences (see above).</p>
     </section>
 
+    <!-- TERMINOLOGY -->
     <section class="card" id="terminology">
       <div class="num-label">Reference</div>
       <h2>Terminology</h2>
       <p>Terms coaches and compliance staff use, and what they actually mean.</p>
       <div class="glossary">
-        <details><summary>NIL</summary><p>Name, Image, and Likeness: your right to be paid by third parties for endorsements, appearances, and your personal brand.</p></details>
-        <details><summary>Revenue sharing</summary><p>Direct payment from a school itself to an athlete, capped at roughly $20.5M per school this year, distinct from NIL.</p></details>
-        <details><summary>Extra benefit</summary><p>Anything of value given because of athletic status with no real service behind it. A violation, not a perk.</p></details>
-        <details><summary>Street agent</summary><p>An unlicensed middleman who brokers access to recruits, often for a cut of future earnings. Not recognized by the NCAA.</p></details>
-        <details><summary>CSC (College Sports Commission)</summary><p>The body created after the House settlement to enforce NIL and revenue-sharing rules.</p></details>
-        <details><summary>NIL Go</summary><p>The CSC's clearinghouse where NIL deals worth $2,500+ are submitted and checked for fair market value.</p></details>
-        <details><summary>CAPS</summary><p>College Athlete Payment System: the system schools use to report direct revenue-sharing payments.</p></details>
-        <details><summary>Transfer portal</summary><p>The database current college athletes use to declare they're open to transferring schools.</p></details>
-        <details><summary>5-in-5</summary><p>The 2026 age-based eligibility model: 5 seasons of competition within a 5-year window from enrollment or age 19.</p></details>
-        <details><summary>NLI (National Letter of Intent)</summary><p>A binding agreement between you and a school. Signing it has real consequences if you later try to attend elsewhere.</p></details>
-        <details><summary>Roster cap</summary><p>A hard limit on how many athletes can be on a team's roster, replacing the old scholarship-count limits at many D1 schools.</p></details>
-        <details><summary>Preferred walk-on</summary><p>A roster spot offered without a scholarship attached. You're wanted on the team, but not being paid to be there.</p></details>
-        <details><summary>Preread</summary><p>Common at schools without athletic scholarships (EX Ivy League or D3): an early, informal review of your transcript and scores by admissions, arranged through a coach, to gauge whether you'd likely be admitted, but it is not an offer or a guarantee.</p></details>
-        <details><summary>"Support" / being on the list</summary><p>A coach formally flagging you to admissions as a recruit they want admitted, at varying levels of priority. Not a scholarship, and not a final admission decision.</p></details>
-        <details><summary>Likely letter</summary><p>An early, unofficial notice from admissions (used at some non-scholarship schools) that you'll likely be admitted — sent before the general decision date, but still short of formal admission.</p></details>
-        <details><summary>Dead period</summary><p>A recruiting window in which no in-person contact is allowed at all, even on campus.</p></details>
+        <details id="term-nil"><summary>NIL</summary><p>Name, Image, and Likeness — your right to be paid by third parties for endorsements, appearances, and your personal brand.</p></details>
+        <details id="term-revenue-sharing"><summary>Revenue sharing</summary><p>Direct payment from a school itself to an athlete, capped at roughly $20.5M per school currently, distinct from NIL.</p></details>
+        <details id="term-extra-benefit"><summary>Extra benefit</summary><p>Anything of value given because of athletic status with no real service behind it — this "benefit" is a violation, not a perk.</p></details>
+        <details id="term-street-agent"><summary>Street agent</summary><p>An unlicensed go-between who brokers access to recruits, often for a cut of future earnings. Street agents aren't recognized by the NCAA and work for themselves, not you.</p></details>
+        <details id="term-csc-gloss"><summary>CSC (College Sports Commission)</summary><p>The body created after the <em>House v. NCAA</em> settlement to enforce NIL and revenue-sharing rules.</p></details>
+        <details id="term-nilgo"><summary>NIL Go</summary><p>The CSC's clearinghouse where NIL deals worth $600+ are submitted and checked for fair market value.</p></details>
+        <details id="term-caps"><summary>CAPS</summary><p>College Athlete Payment System — the system schools use to report direct revenue-sharing payments (see NIL Compensation above).</p></details>
+        <details id="term-transfer-portal"><summary>Transfer portal</summary><p>The database current college athletes use to declare they're open to transferring schools.</p></details>
+        <details id="term-5in5"><summary>5-in-5</summary><p>The 2026 age-based eligibility model: 5 seasons of competition within a 5-year window from enrollment or age 19.</p></details>
+        <details id="term-nli"><summary>NLI (National Letter of Intent)</summary><p>A binding agreement between you and a school. Signing it has real consequences if you later try to attend elsewhere.</p></details>
+        <details id="term-roster-cap"><summary>Roster cap</summary><p>A hard limit on how many athletes can be on a team's roster, replacing the old scholarship-count limits at many D1 schools.</p></details>
+        <details id="term-preferred-walkon"><summary>Preferred walk-on</summary><p>A roster spot offered without a scholarship attached. You're wanted on the team, but not being paid to be there.</p></details>
+        <details id="term-preread"><summary>Preread</summary><p>Common at schools without athletic scholarships (such as Ivy League or D3): an early, informal review of your transcript and scores by admissions, arranged through a coach, to gauge whether you'd likely be admitted, but it is not an offer or a guarantee.</p></details>
+        <details id="term-support"><summary>"Support" / being on the list</summary><p>A coach formally flagging you to admissions as a recruit they want admitted, at varying levels of priority. Not a scholarship, and not a final admission decision.</p></details>
+        <details id="term-likely-letter"><summary>Likely letter</summary><p>An early, unofficial notice from admissions (used at some non-scholarship schools) that you'll likely be admitted. It's sent before the general decision date, but still short of formal admission.</p></details>
+        <details id="term-dead-period"><summary>Dead period</summary><p>A recruiting window in which no in-person contact is allowed at all, even on campus.</p></details>
+        <details id="term-ferpa"><summary>FERPA</summary><p>The Family Educational Rights and Privacy Act — the federal law giving you and your family the right to inspect, review, and correct your own education records (see Privacy above).</p></details>
+        <details id="term-eligibility-center"><summary>NCAA Eligibility Center</summary><p>The NCAA office that certifies academic eligibility and amateurism status for incoming D1/D2 athletes, including international recruits.</p></details>
       </div>
     </section>
 
+    <!-- RULES & LAWS -->
     <section class="card" id="rules-laws">
       <div class="num-label">Reference</div>
       <h2>Rules &amp; Laws</h2>
-      <p>Recruiting is governed by three separate layers of rules that don't always agree with each other. Knowing which one is which matters.</p>
+      <p>Recruiting is governed by three separate layers of rules that don't always agree with each other — knowing which one is talking matters.</p>
       <div class="subcards">
-        <div class="subcard">
+        <div class="subcard" id="ncaa-bylaws">
           <h3>NCAA Bylaws</h3>
           <p>Set the national baseline: contact periods, visit rules, NIL disclosure, eligibility, roster caps, transfer windows. Enforced by the NCAA and, for NIL specifically, the College Sports Commission.</p>
         </div>
         <div class="subcard">
           <h3>State Laws</h3>
-          <p>Vary widely, especially on NIL. Some states let high schoolers sign NIL deals or work with agents for that purpose; others restrict it. Some also limit certain categories of sponsors (EX: alcohol or gambling). Check your specific state.</p>
+          <p>Vary widely — especially on NIL. Some states let high schoolers sign NIL deals or work with agents for that purpose; others restrict it. Some also limit certain categories of sponsor (such as prohibiting sponsorships for alcohol or gambling). Check your specific state.</p>
         </div>
-        <div class="subcard">
+        <div class="subcard" id="state-hs-association">
           <h3>State High School Athletic Association Rules</h3>
-          <p>Separate from both of the above, and can restrict things NCAA/state law would otherwise allow. An NIL deal that's fine under state law can still cost you your <em>high school</em> eligibility if your association doesn't permit it.</p>
+          <p>Separate from NCAA bylaws and state laws, and can restrict things NCAA/state law would otherwise allow — an NIL deal that's fine under state law can still cost you your <em>high school</em> eligibility if your association doesn't permit it.</p>
         </div>
       </div>
     </section>
 
+    <!-- RED FLAGS -->
     <section class="card" id="red-flags">
       <div class="num-label">Reference</div>
       <h2>Red Flags</h2>
       <ul class="flag-list">
         <li><span class="mark">!</span><span><strong>Artificial deadlines.</strong> "Answer today or the offer's gone." A real offer survives you taking time to think.</span></li>
         <li><span class="mark">!</span><span><strong>Guarantees that sound too certain.</strong> No one can promise you playing time, a permanent roster spot, or a specific outcome.</span></li>
-        <li><span class="mark">!</span><span><strong>Unlicensed "agents."</strong> Anyone brokering access to you for a cut of future earnings, without being a licensed agent in your state.</span></li>
+        <li><span class="mark">!</span><span><strong>Unlicensed or street "agents."</strong> Anyone brokering access to you for a cut of future earnings, without being a licensed agent in your state — see Agents/Representation above.</span></li>
         <li><span class="mark">!</span><span><strong>"Don't tell your AD or compliance office."</strong> A legitimate deal or offer has nothing to hide from your school's compliance staff.</span></li>
         <li><span class="mark">!</span><span><strong>Pressure to sign without your family seeing it first.</strong> Any real offer can wait for a parent or advisor to review it.</span></li>
-        <li><span class="mark">!</span><span><strong>Verbal-only promises about aid, playing time, or roster spot.</strong> If it matters, get it in writing.</span></li>
+        <li><span class="mark">!</span><span><strong>Verbal-only promises about aid, playing time, or roster spot.</strong> If a coach won't put it in writing, assume it isn't guaranteed.</span></li>
         <li><span class="mark">!</span><span><strong>A "deal" with no real deliverable.</strong> Getting paid without doing anything in return is a classic sign of disguised pay-for-play.</span></li>
-        <li><span class="mark">!</span><span><strong>Contact outside allowed recruiting periods.</strong> If you're not sure it's allowed, ask directly. See Recruiting Rules above.</span></li>
+        <li><span class="mark">!</span><span><strong>Contact outside allowed recruiting periods.</strong> If you're not sure it's allowed, ask directly — see Recruiting Rules above.</span></li>
       </ul>
     </section>
 
@@ -449,17 +566,18 @@
       <h2>Questions worth asking every recruiter</h2>
       <ol>
         <li>What recruiting period are we in right now, and is this contact allowed?</li>
-        <li>Is this a multi-year or year-to-year scholarship, and is my roster spot guaranteed?</li>
-        <li>Can I get this offer in writing, and which kind of offer is it, exactly?</li>
+        <li>Is this a multi-year or year-to-year scholarship?</li>
+        <li>Is my roster spot guaranteed?</li>
+        <li>Can I get this offer in writing, and what kind of offer is it?</li>
         <li>What happens to my scholarship or NIL deal if I'm injured, or if you leave the program?</li>
-        <li>Is any part of this compensation revenue-sharing, NIL, or both, and how are they treated differently?</li>
+        <li>Is any part of this compensation revenue-sharing, NIL, or both — and how are they treated differently?</li>
         <li>Does this deal have a termination clause tied to my roster status or enrollment?</li>
         <li>Who's my point of contact in the compliance office if I have questions or concerns?</li>
       </ol>
     </div>
 
     <footer>
-      Summarizes general NCAA rules as of September 2026(revenue sharing, roster caps, the 5-in-5 eligibility model, and NIL Go). Rules vary by division, sport, state, and high school athletic association. Always confirm specifics with your high school athletic director and the compliance office of any recruiting school.
+      This site references general NCAA rules as of September 2026 (revenue sharing, roster caps, the 5-in-5 eligibility model, and NIL Go). Rules vary by division, sport, state, and high school athletic association. Always confirm specifics with your high school athletic director and the compliance office of any recruiting school.
     </footer>
   </main>
 </div>
@@ -476,6 +594,19 @@
   }
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  // Open + scroll to a glossary/reference entry when linked via #term-id
+  function openHashTarget(){
+    const id = decodeURIComponent(location.hash.slice(1));
+    if(!id) return;
+    const el = document.getElementById(id);
+    if(el){
+      if(el.tagName === 'DETAILS'){ el.open = true; }
+      setTimeout(() => el.scrollIntoView({behavior:'smooth', block:'center'}), 50);
+    }
+  }
+  window.addEventListener('hashchange', openHashTarget);
+  window.addEventListener('DOMContentLoaded', openHashTarget);
 </script>
 
 </body>
